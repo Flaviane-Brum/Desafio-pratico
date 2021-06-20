@@ -3,5 +3,5 @@ Desafio prático do DevChallenge.<br>
 # Techs:
 
 HTML<br>
-CSS
+CSS<br>
 Designed and created by <a href="https://github.com/Lorenalgm">Lorena</a> :)
