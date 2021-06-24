@@ -24,7 +24,6 @@ img {
 }
 .container {
   width: min(95vw, 1100px);
-
   margin: auto;
 }
 /* Header *********************/
@@ -138,7 +137,7 @@ img {
   .banner {
     grid-template-columns: 1fr;
     padding: 3rem 3rem 3rem 3rem;
-    grid-template-rows: 500px 500px;
+    grid-template-rows: 360px 500px;
   }
   .banner-text {
     grid-row: 2;
@@ -176,8 +175,6 @@ img {
   .menu.active {
     display: block;
     opacity: 1;
-
-  
     animation: down 0.5s forwards;
   }
   .btn-menu {
@@ -192,13 +189,10 @@ img {
 }
 
 @media (min-width: 375px) and (max-width: 676px) {
-  .header .logo h1 a {
-    color: var(--orange);
-  }
   .banner {
     grid-template-columns: 1fr;
     padding: 1rem;
-    grid-template-rows: 400px 500px;
+    grid-template-rows: 260px 400px;
   }
   .banner-text {
     grid-row: 2;
@@ -248,6 +242,45 @@ img {
   }
 }
 
+@media (max-width: 374px) {
+  .header {
+    justify-content: space-around;
+  }
+  .banner-text {
+    width: 300px;
+
+    text-align: center;
+    grid-row: 2;
+  }
+  .banner-img {
+    grid-row: 1;
+    height: auto;
+    margin-top: 0;
+    background-position: center center;
+  }
+  .banner {
+    padding: 0.5rem;
+    grid-template-rows: 200px 300px;
+    grid-template-columns: 1fr;
+  }
+  .banner h1 {
+    font-size: 2rem;
+    width: auto;
+
+    text-align: center;
+  }
+  .banner p {
+    font-size: 1rem;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+  }
+  .banner .btn {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
 @keyframes down {
   from {
     opacity: 0;
