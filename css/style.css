@@ -1,5 +1,260 @@
-html * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --orange: #d2872c;
+  --gray: #766f68;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  width: min(95vw, 1100px);
+
+  margin: auto;
+}
+/* Header *********************/
+.header {
+  display: flex;
+  padding: 1rem 3.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .logo h1 a {
+  color: var(--orange);
+  font-size: 2rem;
+}
+.menu {
+  display: flex;
+}
+.menu li {
+  padding: 0.5rem 0.5rem;
+}
+.menu li a {
+  padding: 0.5rem 0.6rem;
+  color: var(--gray);
+  font-size: 1.125rem;
+}
+.menu li a:hover {
+  color: var(--orange);
+}
+
+.btn-menu {
+  width: 24px;
+  height: 34px;
+  box-sizing: border-box;
+  border: 0;
+  border-top: 4px solid var(--orange);
+  display: none;
+  background-color: transparent;
+  align-items: center;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+
+.btn-menu::before {
+  content: "";
+  width: 100%;
+  display: block;
+  position: relative;
+  top: -8px;
+  left: 0;
+  height: 4px;
+  background: var(--orange);
+}
+.btn-menu::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: relative;
+  top: -5px;
+  left: 0;
+  height: 4px;
+  background: var(--orange);
+  box-shadow: 0 7px var(--orange);
+}
+/* Banner *********************/
+
+.banner {
+  padding: 6rem 1rem 6rem 6rem;
+  display: grid;
+  grid-template-columns: 426px minmax(200px, 1fr);
+}
+.banner-text {
+  z-index: 999;
+}
+.banner h1 {
+  font-size: 5rem;
+  color: var(--gray);
+  width: 750px;
+  z-index: 999;
+  margin-bottom: 2rem;
+}
+.banner p {
+  font-size: 2rem;
+  color: var(--gray);
+  width: 550px;
+  letter-spacing: 0.5px;
+  margin-bottom: 3rem;
+}
+.banner .btn {
+  padding: 1rem 0;
+  max-width: 350px;
+  width: 100%;
+  font-size: 2rem;
+  background-color: var(--orange);
+  color: #fff;
+  border: 0;
+  border-radius: 15px;
+}
+.banner-img {
+  background: url("../assets/team.jpg") no-repeat;
+  background-position: left;
+  background-size: 100%;
+  z-index: 1;
+  margin-top: 60px;
+  height: 100%;
+}
+
+/* Mobile *********************/
+
+@media (min-width: 677px) and (max-width: 863px) {
+  .banner {
+    grid-template-columns: 1fr;
+    padding: 3rem 3rem 3rem 3rem;
+    grid-template-rows: 500px 500px;
+  }
+  .banner-text {
+    grid-row: 2;
+    text-align: center;
+  }
+  .banner-img {
+    height: 100%;
+    margin: 0;
+    grid-row: 1;
+  }
+  .banner h1 {
+    width: auto;
+  }
+  .banner p {
+    width: auto;
+  }
+  .menu {
+    display: none;
+    opacity: 0;
+    border-radius: 5px;
+    top: 37px;
+    right: -56px;
+    background-color: var(--orange);
+    color: #fff;
+    position: absolute;
+    z-index: 99;
+  }
+
+  .menu li a {
+    color: #fff;
+  }
+  nav {
+    position: relative;
+  }
+  .menu.active {
+    display: block;
+    opacity: 1;
+
+  
+    animation: down 0.5s forwards;
+  }
+  .btn-menu {
+    display: block;
+    position: relative;
+    top: 6px;
+  }
+
+  .menu li a:hover {
+    color: #fff;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 676px) {
+  .header .logo h1 a {
+    color: var(--orange);
+  }
+  .banner {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    grid-template-rows: 400px 500px;
+  }
+  .banner-text {
+    grid-row: 2;
+    text-align: center;
+  }
+  .banner-img {
+    height: 100%;
+    margin: 0;
+    grid-row: 1;
+  }
+  .banner h1 {
+    width: auto;
+    font-size: 3rem;
+  }
+  .banner p {
+    width: auto;
+  }
+
+  .menu {
+    display: none;
+    opacity: 0;
+    border-radius: 5px;
+    top: 0px;
+    right: 0px;
+    background-color: var(--orange);
+    color: #fff;
+    position: absolute;
+    z-index: 99;
+  }
+  .menu.active {
+    display: block;
+    opacity: 1;
+    top: 54px;
+
+    animation: down 0.5s forwards;
+  }
+  .btn-menu {
+    display: block;
+    top: 6px;
+    position: relative;
+  }
+  .menu li a {
+    color: #fff;
+  }
+  .menu li a:hover {
+    color: #fff;
+  }
+}
+
+@keyframes down {
+  from {
+    opacity: 0;
+    transform: translate3d(-50px, 0px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0);
+  }
 }
